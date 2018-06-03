@@ -1,0 +1,296 @@
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE OUTAFROUKTE;
+Database changed
+mysql> DROP TABLE IF EXISTS CANDIDATS;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> CREATE TABLE CANDIDATS (
+    -> NumeroCandidat INT NOT NULL ,
+    -> Nom CHAR (15) NOT NULL ,
+    -> prenom char (15) not null ,
+    -> primary key (Numerocandidat) ) ;
+Query OK, 0 rows affected (0.53 sec)
+
+mysql> INSERT INTO CANDIDATS VALUES ('1','ALI','P-ALI');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO CANDIDATS VALUES ('','ALI','P-ALI');
+ERROR 1366 (HY000): Incorrect integer value: '' for column 'NumeroCandidat' at r
+ow 1
+mysql> INSERT INTO CANDIDATS VALUES ('2','Ahmed','P-Ahmed');
+Query OK, 1 row affected (0.33 sec)
+
+mysql> INSERT INTO CANDIDATS VALUES ('3','Imane','P-Imane');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> INSERT INTO CANDIDATS VALUES ('4','Amine','P-Amine');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> DROP TABLE IF EXISTS MATIERE;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> CREATE TABLE MATIERE(
+    -> CODEMATIERE INT NOT NULL,
+    -> NOMMATIERE CHAR(15) NOT NULL,
+    -> COEFFICIENTMATIERE INT NOT NULL,
+    -> PRIMARY KEY(CODEMATIERE) );
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> insert into MATIERE values ('1','MATH','2');
+Query OK, 1 row affected (0.34 sec)
+
+mysql> insert into MATIERE values ('2','PHYSIQUE','2');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into MATIERE values ('3','FRANCAIS','3');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into MATIERE values ('4','ANGLAIS','3');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into MATIERE values ('3','FRANCAIS','3')jyqgteliugqliuflkuqz;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'jyqgt
+eliugqliuflkuqz' at line 1
+mysql> DROP TABLE IF EXISTS EXAMINER;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> CREATE TABLE EXAMINER(
+    -> NUMEROCANDIDAT INT NOT NULL,
+    -> NUMEROCANDIDAT INT NOT NULL,.PIUGPMUISFDMQUFOI.KYUGEFLI
+    -> .iugoliuqgfimu;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near '.KYUG
+EFLI
+.iugoliuqgfimu' at line 3
+mysql> CREATE TABLE EXAMINER(
+    -> NUMEROCANDIDAT INT,VIRGIN KEY(NUMEROCANDIDAT) REFERENCE CANDIDATS(NUMEROC ANDIDAT),
+    -> CODEMATIERE INT,VIRGIN KEY(CODEMATIERE) REFERENCE MATIERE(CODEMATIERE),
+    -> DATE DATE NOT NULL,
+    -> NOTE INT NOT NULL;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'KEY(N
+UMEROCANDIDAT) REFERENCE CANDIDATS(NUMEROCANDIDAT),
+CODEMATIERE INT,VIRGIN ' at line 2
+mysql> NOTE INT NOT NULL);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'NOTE
+INT NOT NULL)' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> DROP TABLE IF EXISTS EXAMINER;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> CREATE TABLE EXAMINER(
+    -> NUMEROCANDIDAT INT,VIRGIN KEY(NUMEROCANDIDAT) REFERENCE CANDIDATS(NUMEROC
+ANDIDAT),
+    -> CODEMATIERE INT,VIRGIN KEY(CODEMATIERE) REFERENCE MATIERE(CODEMATIERE),
+    -> NUMEROCANDIDAT INT,VIRGIN KEY(NUMEROCANDIDAT) REFERENCE CANDIDATS(NUMEROC
+ANDIDAT),;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'KEY(N
+UMEROCANDIDAT) REFERENCE CANDIDATS(NUMEROCANDIDAT),
+CODEMATIERE INT,VIRGIN ' at line 2
+mysql> DROP TABLE IF EXISTS EXAMINER;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> CREATE TABLE EXAMINER(
+    -> NUMEROCANDIDAT INT,FOREIGN KEY(NUMEROCANDIDAT) REFERENCE CANDIDATS(NUMERO
+CANDIDAT),
+    -> CODEMATIERE INT,FOREIGN KEY(CODEMATIERE) REFERENCE MATIERE(CODEMATIERE),
+    -> DATE DATETIME,NOTE DECIMAL(4,2) CHECK (NOTE BETWEEN 0 AND 20));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'REFER
+ENCE CANDIDATS(NUMEROCANDIDAT),
+CODEMATIERE INT,FOREIGN KEY(CODEMATIERE) RE' at line 2
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> DROP TABLE IF EXISTS EXAMINER;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> CREATE TABLE EXAMINER(
+    -> NUMEROCANDIDAT INT,FOREIGN KEY(NUMEROCANDIDAT) REFERENCE CANDIDATS(NUMERO
+CANDIDAT),
+    -> CODEMATIERE INT,FOREIGN KEY(CODEMATIERE) REFERENCE MATIERE(CODEMATIERE),;
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'REFER
+ENCE CANDIDATS(NUMEROCANDIDAT),
+CODEMATIERE INT,FOREIGN KEY(CODEMATIERE) RE' at line 2
+mysql> CODEMATIERE INT,FOREIGN KEY(CODEMATIERE) REFERENCE MATIERE(CODEMATIERE),;
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near 'CODEM
+ATIERE INT,FOREIGN KEY(CODEMATIERE) REFERENCE MATIERE(CODEMATIERE),' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> DROP TABLE IF EXISTS EXAMINER;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> CREATE TABLE EXAMINER(
+    -> NUMEROCANDIDAT INT,FOREIGN KEY(NUMEROCANDIDAT) REFERENCES CANDIDATS(NUMER
+OCANDIDAT),
+    -> CODEMATIERE INT,FOREIGN KEY(CODEMATIERE) REFERENCES MATIERE(CODEMATIERE),
+;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near '' at
+line 3
+mysql> DROP TABLE IF EXISTS EXAMINER;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> CREATE TABLE EXAMINER(
+    -> NUMEROCANDIDAT INT,FOREIGN KEY(NUMEROCANDIDAT) REFERENCES CANDIDATS(NUMER OCANDIDAT),
+    -> CODEMATIERE INT,FOREIGN KEY(CODEMATIERE) REFERENCES MATIERE(CODEMATIERE),
+
+    -> DATE DATETIME,
+NOTE DECIMAL(4,2) CHECK (NOTE BETWEEN 0 AND 20));
+Query OK, 0 rows affected (0.58 sec)
+
+mysql> SELECT *FROM CANDIDATS;
++----------------+-------+---------+
+| NumeroCandidat | Nom   | prenom  |
++----------------+-------+---------+
+|              1 | ALI   | P-ALI   |
+|              2 | Ahmed | P-Ahmed |
+|              3 | Imane | P-Imane |
+|              4 | Amine | P-Amine |
++----------------+-------+---------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT *FROM MATIERE;
++-------------+------------+--------------------+
+| CODEMATIERE | NOMMATIERE | COEFFICIENTMATIERE |
++-------------+------------+--------------------+
+|           1 | MATH       |                  2 |
+|           2 | PHYSIQUE   |                  2 |
+|           3 | FRANCAIS   |                  3 |
+|           4 | ANGLAIS    |                  3 |
++-------------+------------+--------------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO EXAMINER VALUES('1','1','2018-06-04 00:00:00','12,00');
+ERROR 1366 (HY000): Incorrect decimal value: '12,00' for column 'NOTE' at row 1
+mysql> INSERT INTO EXAMINER VALUES('1','1','2018-06-04 00:00:00',12.00);
+Query OK, 1 row affected (0.34 sec)
+
+mysql> INSERT INTO EXAMINER VALUES('1','2','2018-06-04 00:00:00',20.00);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO EXAMINER VALUES('1','3','2018-06-04 00:00:00',12.00);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> INSERT INTO EXAMINER VALUES('2','3','2018-06-04 00:00:00',13.00);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO EXAMINER VALUES('1','4','2018-06-04 00:00:00',5.00);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO EXAMINER VALUES('3','1','2018-06-04 00:00:00',9.50);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> SELECT *FROM EXAMINER;
++----------------+-------------+---------------------+-------+
+| NUMEROCANDIDAT | CODEMATIERE | DATE                | NOTE  |
++----------------+-------------+---------------------+-------+
+|              1 |           1 | 2018-06-04 00:00:00 | 12.00 |
+|              1 |           2 | 2018-06-04 00:00:00 | 20.00 |
+|              1 |           3 | 2018-06-04 00:00:00 | 12.00 |
+|              2 |           3 | 2018-06-04 00:00:00 | 13.00 |
+|              1 |           4 | 2018-06-04 00:00:00 |  5.00 |
+|              3 |           1 | 2018-06-04 00:00:00 |  9.50 |
++----------------+-------------+---------------------+-------+
+6 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> SELECT COUNT(NUMEROCANDIDAT) FROM CANDIDATS;
++-----------------------+
+| COUNT(NUMEROCANDIDAT) |
++-----------------------+
+|                     4 |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(NOTE) AS 'NOTE MAX', MIN(NOTE) AS 'NOTE MIN' FROM CANDIDATS;
+ERROR 1054 (42S22): Unknown column 'NOTE' in 'field list'
+mysql> SELECT MAX(NOTE) AS 'NOTE MAX', MIN(NOTE) AS 'NOTE MIN' FROM EXAMINER;
++----------+----------+
+| NOTE MAX | NOTE MIN |
++----------+----------+
+|    20.00 |     5.00 |
++----------+----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT NOM, SUM(NOTE* COEFFICIENTMATIERE)/SUM(COEFFICIENTMATIERE) AS 'MGC AND' FROM CANDIDATS,MATIERE,EXAMINER WHERE CANDIDATS.NUMEROCANDIDAT=EXAMINER.NUM EROCANDIDAT AND EXAMINER.CODEMATIERE=MATIERE.CODEMATIERE GROUP BY CANDIDATS.NUME ROCANDIDAT,NOM;
++-------+-----------+
+| NOM   | MGCAND    |
++-------+-----------+
+| ALI   | 11.500000 |
+| Ahmed | 13.000000 |
+| Imane |  9.500000 |
++-------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE VIEW MGCAND AS SELECT SUM(NOTE*COEFFICIENTMATIERE)/SUM(COEFFICIENT
+MATIERE) AS 'MGCAND'FROM CANDIDATS, EXAMINER, MATIERE WHERE CANDIDATS.NUMEROCAND
+IDAT=EXAMINER.NUMEROCANDIDAT AND EXAMINER.CODEMATIERE=MATIERE.CODEMATIERE GROUP
+BY CANDIDATS.NUMEROCANDIDAT;
+Query OK, 0 rows affected (0.34 sec)
+
+mysql> SELECT AVG (MGCAND) AS 'MOYENNEPROMOTIONDECONCOURS' FROM MGCAND;
++----------------------------+
+| MOYENNEPROMOTIONDECONCOURS |
++----------------------------+
+|              11.3333333333 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> ^C
+mysql> CREATE VIEW MOYENNEPROMOTIONDECONCOURS AS SELECT AVG(MGCAND) AS 'MOYENNEP
+ROMOTIONCONCOURS' FROM MGCAND;
+Query OK, 0 rows affected (0.37 sec)
+
+mysql> SELECT NOM, SUM(NOTE* COEFFICIENTMATIERE)/SUM(COEFFICIENTMATIERE) AS 'MGC
+AND' FROM CANDIDATS, EXAMINER, MATIERE WHERE CANDIDATS.NUMEROCANDIDAT=EXAMINER.N
+UMEROCANDIDAT AND EXAMINER.CODEMATIERE=MATIERE.CODEMATIERE GROUP BY CANDIDATS.NU
+MERO,NOM HAVING SUM(NOTE* COEFFICIENTMATIERE)/SUM(COEFFICIENTMATIERE)>(SELECT MO
+YENNEPROMOTIONCONCOURS FROM MOYENNEPROMOTIONCONCOURS);
+ERROR 1146 (42S02): Table 'outafroukte.moyennepromotionconcours' doesn't exist
+mysql> SELECT NOM, SUM(NOTE* COEFFICIENTMATIERE)/SUM(COEFFICIENTMATIERE) AS 'MGC
+AND' FROM CANDIDATS, EXAMINER, MATIERE WHERE CANDIDATS.NUMEROCANDIDAT=EXAMINER.N
+UMEROCANDIDAT AND EXAMINER.CODEMATIERE=MATIERE.CODEMATIERE GROUP BY CANDIDATS.NU
+MERO,NOM HAVING SUM(NOTE* COEFFICIENTMATIERE)/SUM(COEFFICIENTMATIERE)>(SELECT MO
+YENNEPROMOTIONDECONCOURS FROM MOYENNEPROMOTIONDECONCOURS);
+ERROR 1054 (42S22): Unknown column 'CANDIDATS.NUMERO' in 'group statement'
+mysql> SELECT NOM, SUM(NOTE* COEFFICIENTMATIERE)/SUM(COEFFICIENTMATIERE) AS 'MGC
+AND' FROM CANDIDATS, EXAMINER, MATIERE WHERE CANDIDATS.NUMEROCANDIDAT=EXAMINER.N
+UMEROCANDIDAT AND EXAMINER.CODEMATIERE=MATIERE.CODEMATIERE GROUP BY CANDIDATS.NU
+MERO,NOM HAVING SUM(NOTE* COEFFICIENTMATIERE)/SUM(COEFFICIENTMATIERE)>(SELECT MO
+YENNEPROMOTIONDECONCOURS FROM MOYENNEPROMOTIONDECONCOURS);
+ERROR 1054 (42S22): Unknown column 'CANDIDATS.NUMERO' in 'group statement'
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> SELECT NOM, SUM(NOTE* COEFFICIENTMATIERE)/SUM(COEFFICIENTMATIERE) AS 'MGC
+AND' FROM CANDIDATS, EXAMINER, MATIERE WHERE CANDIDATS.NUMEROCANDIDAT=EXAMINER.N
+UMEROCANDIDAT AND EXAMINER.CODEMATIERE=MATIERE.CODEMATIERE GROUP BY CANDIDATS.NU
+MEROCANDIDAT,NOM HAVING SUM(NOTE* COEFFICIENTMATIERE)/SUM(COEFFICIENTMATIERE)>(S
+ELECT MOYENNEPROMOTIONDECONCOURS FROM MOYENNEPROMOTIONDECONCOURS);
+ERROR 1054 (42S22): Unknown column 'MOYENNEPROMOTIONDECONCOURS' in 'field list'
+mysql>
